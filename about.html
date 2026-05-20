@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | VITALS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Login -->
+    <div class="modal" id="login-modal">
+      <div class="modal__content">
+        <span class="close-btn">&times;</span>
+        <form class="modal__form" id="login-form">
+          <h1>Welcome Back!!</h1>
+          <p>Login to your VITALS account</p>
+          <div class="form__inputs">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form__inputs">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="modal__btn-submit">Login</button>
+          <a href="#" class="forgot-pass">Forgot password?</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- Signup -->
+    <div class="modal" id="signup-modal">
+      <div class="modal__content">
+        <span class="close-btn" id="close-signup">&times;</span>
+        <form class="modal__form" id="signup-form">
+          <h1>Create Account</h1>
+          <p>Join the VITALS community today</p>
+          <div class="form__inputs">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form__inputs">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form__inputs">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+          <button type="submit" class="modal__btn-submit">Sign Up</button>
+          <p class="switch-form">
+            Already have an account? <a href="#" id="to-login">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- NavBar -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" id="navbar__logo"
+          ><i class="fa-solid fa-heart-pulse"></i> VITALS</a
+        >
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__links">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__links">About Us</a>
+          </li>
+          <li class="navbar__btn">
+            <a href="index.html?signup=true" class="button">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="main">
+      <div class="main__container">
+        <div class="main__img--container">
+          <img
+            src="img/undraw_medicine_hqqg.svg"
+            alt="About Vitals"
+            class="main__img"
+          />
+        </div>
+        <div class="main__content">
+          <h1>OUR MISSION</h1>
+          <h2>Bridging Healthcare and Technology</h2>
+          <p>
+            Provide monitoring tools that allow patients and doctors to stay
+            connected. No more gaps in care.
+          </p>
+          <div class="about__stats">
+            <div class="stat-item">
+              <span>1</span>
+              <p>Users</p>
+            </div>
+            <div class="stat-item">
+            <div class="stat-item">
+              <span>24/7</span>
+              <p>Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <section class="features">
+      <h1>The Team Behind VITALS</h1>
+      <div class="features__wrapper">
+        <div class="features__card">
+          <i class="fa-solid fa-user-doctor"></i>
+          <h2>Medical Experts</h2>
+          <p>Guided by professionals to ensure clinical safety.</p>
+        </div>
+        <div class="features__card">
+          <i class="fa-solid fa-code"></i>
+          <h2>Engineers</h2>
+          <p>Building secure, fast, and reliable infrastructure.</p>
+        </div>
+        <div class="features__card">
+          <i class="fa-solid fa-headset"></i>
+          <h2>Support</h2>
+          <p>Available to assist with monitoring.</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="web.js"></script>
+  </body>
+</html>

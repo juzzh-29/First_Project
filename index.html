@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VITALS | Monitoring System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Login -->
+    <div class="modal" id="login-modal">
+      <div class="modal__content">
+        <span class="close-btn">&times;</span>
+        <form class="modal__form" id="login-form">
+          <h1>Welcome Back!!</h1>
+          <p>Login to your VITALS account</p>
+          <div class="form__inputs">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form__inputs">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <button type="submit" class="modal__btn-submit">Login</button>
+          <a href="#" class="forgot-pass">Forgot password?</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- SignUp -->
+    <div class="modal" id="signup-modal">
+      <div class="modal__content">
+        <span class="close-btn" id="close-signup">&times;</span>
+        <form class="modal__form" id="signup-form">
+          <h1>Create Account</h1>
+          <p>Join the VITALS community today</p>
+          <div class="form__inputs">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div class="form__inputs">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form__inputs">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+          <button type="submit" class="modal__btn-submit">Sign Up</button>
+          <p class="switch-form">
+            Already have an account? <a href="#" id="to-login">Login</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- NavBar -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="index.html" id="navbar__logo"
+          ><i class="fa-solid fa-heart-pulse"></i> VITALS</a
+        >
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="index.html" class="navbar__links">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="about.html" class="navbar__links">About Us</a>
+          </li>
+          <li class="navbar__btn">
+            <a href="#" class="button nav__btn-signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Features -->
+    <main class="main">
+      <div class="main__container">
+        <div class="main__img--container">
+          <img
+            src="img/undraw_medicine_hqqg.svg"
+            alt="doctor"
+            class="main__img"
+          />
+        </div>
+        <div class="main__content">
+          <h1>VITAL SIGNS</h1>
+          <h2>MONITORING & RECORDING SYSTEM</h2>
+          <p>Monitoring Today for a Healthier Tomorrow</p>
+          <button class="main__btn" id="get-started">Get Started</button>
+        </div>
+      </div>
+    </main>
+
+    <section class="features" id="services">
+      <h1>Our Core Features</h1>
+      <div class="features__container">
+        <div class="features__card">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <h2>Real-time Tracking</h2>
+          <p>
+            Instant updates on all 5 critical vital signs for better patient
+            care.
+          </p>
+        </div>
+        <div class="features__card">
+          <i class="fa-solid fa-user-shield"></i>
+          <h2>Secure Access</h2>
+          <p>
+            Role-based login system keeping patient data safe and organized.
+          </p>
+        </div>
+        <div class="features__card">
+          <i class="fa-solid fa-file-medical"></i>
+          <h2>Doctor Notes</h2>
+          <p>
+            Administrators can record observations directly into the patient
+            record.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="web.js"></script>
+  </body>
+</html>

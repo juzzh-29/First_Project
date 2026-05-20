@@ -1,0 +1,579 @@
+:root {
+  --neon: #0056b3;
+  --bg: #e9ecef;
+  --card: #dee2e6;
+  --danger: #dc3545;
+  --warning: #fd7e14;
+  --purple: #6f42c1;
+  --glow: rgba(0, 86, 179, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: #343a40;
+  padding-top: 100px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background: rgba(233, 236, 239, 0.9);
+  backdrop-filter: blur(10px);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid var(--glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  color: var(--neon);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.user-greeting {
+  margin-right: 20px;
+  opacity: 0.8;
+}
+.logout-btn {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* --- STRUCTURE & BACK BUTTON --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--purple);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.back-btn:hover {
+  color: var(--neon);
+  transform: translateX(-5px);
+}
+
+/* --- SECTION BOX --- */
+.section-box {
+  background: #f8f9fa;
+  border: 1px solid var(--glow);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 0 20px rgba(0, 86, 179, 0.03);
+}
+.box-title {
+  color: var(--neon);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- PATIENT INFO GRID --- */
+.info-grid {
+  display: flex;
+  gap: 15px;
+}
+.info-card {
+  flex: 1;
+  background: #dee2e6;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #ced4da;
+}
+.info-card small {
+  color: var(--neon);
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+.info-card p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* --- MONITOR LAYOUT (LIVE SECTION) --- */
+.monitor-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 2px 1fr;
+  gap: 30px;
+}
+.divider {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.live-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.status-item {
+  background: #f1f3f5;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #adb5bd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 85px;
+  transition: 0.3s;
+  grid-column: span 2;
+}
+
+.status-item:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+.status-item:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.status-label {
+  color: #6c757d;
+  font-size: 0.6rem;
+  margin-bottom: 4px;
+}
+.status-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.status-badge {
+  font-size: 0.55rem;
+  margin-top: 5px;
+}
+
+/* --- SCAN CONTROLS --- */
+.scan-hint {
+  opacity: 0.6;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.scan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.scan-btn {
+  background: none;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  padding: 15px;
+  color: #343a40;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+.scan-btn small {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.action-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.save-icon {
+  color: var(--neon);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.delete-icon {
+  color: var(--warning);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.print-icon {
+  color: var(--purple);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.print-icon:hover {
+  transform: scale(1.1);
+  color: var(--neon);
+}
+
+/* --- NEW RESET DROPDOWN STYLES --- */
+.reset-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.reset-menu-content {
+  display: none;
+  position: absolute;
+  bottom: 45px;
+  right: 0;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  border-radius: 10px;
+  padding: 10px 0;
+  border: 1px solid var(--glow);
+}
+.reset-menu-content.show {
+  display: block;
+}
+.reset-menu-content small {
+  display: block;
+  padding: 5px 15px;
+  font-size: 10px;
+  color: #888;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.reset-menu-content a {
+  color: #343a40;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  transition: 0.2s;
+}
+.reset-menu-content a:hover {
+  background-color: #f8f9fa;
+  color: var(--neon);
+}
+.reset-menu-content a i {
+  width: 15px;
+  text-align: center;
+}
+
+/* --- HISTORY CARDS --- */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+.history-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+}
+.history-card:hover {
+  border-color: rgba(0, 86, 179, 0.2);
+  transform: translateY(-3px);
+}
+
+.icon-hr {
+  color: var(--danger);
+}
+.icon-temp {
+  color: var(--warning);
+}
+.icon-bp {
+  color: var(--purple);
+}
+.icon-spo2 {
+  color: #0099cc;
+}
+.icon-resp {
+  color: var(--neon);
+}
+
+.card-body .val {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #212529;
+}
+.hr-unit {
+  color: var(--danger);
+}
+.temp-unit {
+  color: var(--warning);
+}
+.bp-unit {
+  color: var(--purple);
+}
+.spo2-unit {
+  color: #0099cc;
+}
+.resp-unit {
+  color: var(--neon);
+}
+
+/* --- TABLES & FORMS (CLEANED UP STATUS MANAGEMENT) --- */
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Specific fix to remove underlines from table links */
+table a {
+  text-decoration: none !important;
+  color: var(--neon);
+  font-weight: bold;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  color: var(--neon);
+  border-bottom: 2px solid var(--glow);
+  font-size: 0.8rem;
+}
+td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Soft border fix */
+  font-size: 0.85rem;
+}
+
+.val-hr {
+  color: var(--danger);
+  font-weight: bold;
+}
+.val-temp {
+  color: var(--warning);
+  font-weight: bold;
+}
+.val-bp {
+  color: #6f42c1;
+  font-weight: bold;
+}
+.val-spo2 {
+  color: #0099cc;
+  font-weight: bold;
+}
+
+.note-form {
+  display: flex;
+  gap: 5px;
+}
+.note-input {
+  background: #fff;
+  border: 1px solid #ced4da;
+  color: #343a40;
+  padding: 5px;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 0.75rem;
+}
+.note-save {
+  background: var(--neon);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+.note-display {
+  color: var(--neon);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+/* --- TOAST & ANIMATIONS --- */
+#save-toast {
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--neon);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 2000;
+}
+#save-toast.show {
+  visibility: visible;
+  animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media print {
+  body {
+    padding-top: 0;
+    background: white;
+  }
+  .navbar,
+  .back-btn,
+  .mon-right,
+  .divider,
+  .action-footer,
+  .logout-btn,
+  .admin-section,
+  .note-form {
+    display: none !important;
+  }
+}
+
+/* This hides the section from the dashboard screen */
+#print-section {
+    display: none;
+}
+
+/* This makes it reappear ONLY when the printer is active */
+@media print {
+    #print-section {
+        display: block !important;
+    }
+    body * { visibility: hidden; }
+    #print-section, #print-section * { visibility: visible; }
+    #print-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* Modal Styling for Restricted Print */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.close-notice-btn {
+    background: var(--neon, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#userSearch {
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#userSearch:focus {
+    border-color: var(--neon);
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.1);
+}
+
+/* Optional: Animation for the rows appearing/disappearing */
+#userTable tr {
+    transition: opacity 0.3s ease;
+}
+
+.sig-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+.sig-left {
+  text-align: left;
+}
+
+.sig-left .sig-label {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.sig-left .sig-printed {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.sig-left .sig-role {
+  font-size: 11px;
+  color: #666;
+  margin: 2px 0 0;
+}
+
+.sig-right {
+  text-align: center;
+  min-width: 180px;
+}
+
+.sig-space {
+  height: 36px;
+}
+
+.sig-line {
+  border-top: 1px solid #000;
+  margin-bottom: 4px;
+}
+
+.sig-right .sig-role {
+  font-size: 11px;
+  color: #666;
+  margin: 0;
+}
